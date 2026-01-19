@@ -1,13 +1,13 @@
-## spree-playwright-challenge
+# spree-playwright-challenge
 
-# Overview
+## Overview
 This project contains automated end-to-end testing for spree e-commerce demo site - checkout flow using Playwright.
 
-# Tech Stack
+## Tech Stack
 - Playwright
 - TypeScript
 
-# Project Structure
+## Project Structure
 library/
 - pages/        -> Page Objects
 - components/   -> UI Components
@@ -19,18 +19,17 @@ tests/
 
 .github/workflows -> GitHub Action
 
-# Running the Test
+## Running the Test
 Install dependencies:
 ```bash
 npm install
-```bash
-
+```
 Run test in headless:
 ```bash
 npx playwright text
-```bash
+```
 
 Run test in headed:
 ```bash
 npx playwright test --headed
-```bash
+```
