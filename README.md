@@ -23,11 +23,14 @@ tests/
 Install dependencies:
 ```bash
 npm install
+```bash
 
 Run test in headless:
 ```bash
 npx playwright text
+```bash
 
 Run test in headed:
 ```bash
 npx playwright test --headed
+```bash

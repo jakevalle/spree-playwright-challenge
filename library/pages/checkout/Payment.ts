@@ -5,7 +5,6 @@ export class PaymentPage {
     readonly page: Page;
     readonly emailInput: Locator;
     readonly mobileNoInput: Locator;
-    readonly fullNameInput: Locator;
     readonly paymentFrame: FrameLocator;
     readonly payNowButton: Locator;
     readonly cardButton: Locator;
@@ -18,7 +17,6 @@ export class PaymentPage {
         this.paymentFrame = page.frameLocator('[title="Secure payment input frame"]:not([tabindex])');
         this.emailInput = this.paymentFrame.getByRole('textbox', { name: 'Email' });
         this.mobileNoInput = this.paymentFrame.getByRole('textbox', { name: 'Mobile number' });
-        this.fullNameInput = this.paymentFrame.getByRole('textbox', { name: 'Full name' });
         this.cardButton = this.paymentFrame.getByTestId('card');
         this.cardNumberInput = this.paymentFrame.getByRole('textbox', { name: 'Card number' });
         this.expDateInput = this.paymentFrame.getByRole('textbox', { name: 'Expiration date MM / YY' });
@@ -37,7 +35,6 @@ export class PaymentPage {
         // await this.page.waitForLoadState('networkidle');
         await this.emailInput.waitFor({state: 'visible'});
         await this.mobileNoInput.waitFor({state: 'visible'});
-        await this.fullNameInput.waitFor({state: 'visible'});
 
         await this.payNowButton.scrollIntoViewIfNeeded();
         await this.payNowButton.waitFor({state: 'visible'});
