@@ -29,6 +29,8 @@ export class ProductDetailPage {
     }
 
     async addProductToCart(productOrder: ProductOrder) {
+        await this.page.waitForLoadState('networkidle');
+
         await this.colorListBox.getByRole('option', { name: productOrder.color}).click();
 
         await this.sizeButton.click();

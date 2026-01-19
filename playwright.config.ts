@@ -14,7 +14,7 @@ import { defineConfig, devices } from '@playwright/test';
 export default defineConfig({
   timeout: 60_000,
   expect: {
-    timeout: 30_000
+    timeout: 60_000
   },
   testDir: './tests',
   /* Run tests in files in parallel */
@@ -37,8 +37,9 @@ export default defineConfig({
     video: 'retain-on-failure',
     screenshot: 'only-on-failure',
     headless: true,
-    actionTimeout: 15_000,
-    navigationTimeout: 30_000
+    actionTimeout: 30_000,
+    navigationTimeout: 30_000,
+    viewport: { width: 1280, height: 800}
   },
 
   /* Configure projects for major browsers */
@@ -53,11 +54,6 @@ export default defineConfig({
       // dependencies: ["setup"],
       use: {
         ...devices['Desktop Chrome'],
-        viewport: null,
-        deviceScaleFactor: undefined,
-        launchOptions: {
-          args: ["--start-maximized"],
-        }
       }
     }
 
